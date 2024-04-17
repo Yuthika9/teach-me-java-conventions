@@ -3,24 +3,44 @@ package powerpackage;
 
 import org.junit.Test;
 
-public class powertest {
-    @Test
-    public void one_raised_to_one_is_onew() {
-        assert powerfinder.OF(1,1) == 1;
-    }
+ @Test
+        public void shouldReturnOneIfTheExponentIsOne(){
+            int exponent = 1;
+            int index = 1;
+            int ans = 1;
 
-    @Test
-    public void twoRaised_to_one_is_2() {
-        assert powerfinder.OF(2,1) == 2;
-    }
+            Power power = new Power(index,exponent);
 
-    @Test
-    public void two_power_2_is_4() {
-        assert powerfinder.OF(2, 2) == 4;
-    }
+            assert power.findPower() == ans;
+        }
 
-    @Test
-    public void power_of_2_and_3_Is_SIX() {
-        assert powerfinder.OF(3, 2) == 3*3;
-    }
+        @Test
+        public void shouldReturnOneIfTheExponentIsZero(){
+            int exponent = 0;
+            int index = 4;
+            int ans = 1;
+            Power power = new Power(index,exponent);
+
+            assert power.findPower() == ans;
+        }
+        @Test
+        public void shouldReturnTwoIfTheBaseIsTwoExponentOne(){
+            int exponent = 1;
+            int index = 2;
+            int ans = 2;
+
+            Power power = new Power(index,exponent);
+            assert power.findPower() == ans;
+
+        }
+
+        @Test
+        public void shouldReturnNineIfTheBaseIsThreeExponentThree(){
+            int exponent = 3;
+            int index = 3;
+            int ans = 9;
+
+            Power power = new Power(index,exponent);
+            assert power.findPower() == ans;
+
 }
