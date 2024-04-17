@@ -1,11 +1,25 @@
 package powerpackage;
 
-public class powerfinder {
-    public static int OF(int xyz, int pqr) {
-        int p = 1;
-        for (int i = 0; i<pqr; i++) {
-            p *= xyz;
+    private final int base;
+    private final int exponent;
+
+    public Power(int base, int exponent) {
+
+        this.base = base;
+        this.exponent = exponent;
+    }
+
+    public int findPower() {
+        int pow = base;
+        if(exponent == 0) {
+            return 1;
         }
-        return p;
+        if(exponent == 1) {
+            return base;
+        }
+        for(int i = 1; i <=exponent; i++) {
+            pow = pow * base;
+        }
+        return pow;
     }
 }
