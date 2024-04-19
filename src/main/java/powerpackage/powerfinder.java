@@ -1,4 +1,6 @@
-package powerpackage;
+package org.example;
+
+public class Power {
 
     private final int base;
     private final int exponent;
@@ -9,17 +11,27 @@ package powerpackage;
         this.exponent = exponent;
     }
 
-    public int findPower() {
+    public int calculate() {
+
         int pow = base;
-        if(exponent == 0) {
+
+        boolean exp_is_zero = (exponent == 0);
+        boolean exp_is_one = exponent == 1;
+
+        if(exp_is_zero) {
             return 1;
         }
-        if(exponent == 1) {
+
+        if(exp_is_one) {
             return base;
         }
-        for(int i = 1; i <=exponent; i++) {
+
+        for(int iterator = 1; iterator <= exponent; iterator++) {
             pow = pow * base;
         }
+
         return pow;
     }
 }
+
+
